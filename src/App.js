@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+
+import BD from './assets/bd.json';
+//components
+import Header from './components/Header/Header';
+import Assortment from './components/Assortment/Assortment';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <div className="container">
+        <Header />
+        <Assortment state={BD} />
+      </div>
     </div>
   );
 }
