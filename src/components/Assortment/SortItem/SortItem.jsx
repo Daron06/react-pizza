@@ -14,26 +14,45 @@ const SortItem = (props) => {
           <p className="sort-item-name">{item.name}</p>
           <div className="sort-item-block">
             <div>
-              <button
+              <input
+                type="radio"
                 disabled={!item.thickness[0].count}
-                onClick={() => console.log(item.thickness[0].count)}
-              >
-                {item.thickness[0].name}
-              </button>
-              <button disabled={!item.thickness[1].count}>
-                {item.thickness[1].name}
-              </button>
+                id="radio1"
+                name="radio_group_1"
+              />
+              <label htmlFor="radio1">{item.thickness[0].name}</label>
+
+              <input
+                type="radio"
+                disabled={!item.thickness[1].count}
+                id="radio2"
+                name="radio_group_1"
+              />
+              <label htmlFor="radio2">{item.thickness[1].name}</label>
             </div>
             <div>
-              <button disabled={!item.thickness[0].size[0].count}>
-                {item.thickness[0].size[0].size} см.
-              </button>
-              <button disabled={!item.thickness[0].size[1].count}>
-                {item.thickness[0].size[1].size} см.
-              </button>
-              <button disabled={!item.thickness[0].size[2].count}>
-                {item.thickness[0].size[2].size} см.
-              </button>
+              <input
+                type="radio"
+                disabled={!item.thickness[0].size[0].count}
+                id="radio3"
+                name="radio_group_2"
+              />
+              <label htmlFor="radio3">{`${item.thickness[0].size[0].size} см.`}</label>
+
+              <input
+                type="radio"
+                disabled={!item.thickness[0].size[1].count}
+                id="radio4"
+                name="radio_group_2"
+              />
+              <label htmlFor="radio4">{`${item.thickness[0].size[1].size} см.`}</label>
+              <input
+                type="radio"
+                disabled={!item.thickness[0].size[2].count}
+                id="radio5"
+                name="radio_group_2"
+              />
+              <label htmlFor="radio5">{`${item.thickness[0].size[2].size} см.`}</label>
             </div>
           </div>
           <div className="sort-item-price">

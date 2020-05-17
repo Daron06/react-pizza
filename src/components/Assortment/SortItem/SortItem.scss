@@ -25,32 +25,47 @@
 
     margin-bottom: 17px;
 
-    button:hover {
+    input[type='radio'] {
+      display: none;
+      margin: 10px;
+    }
+
+    label:hover {
       background: #ffffff;
       box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
       border-radius: 5px;
     }
 
-    button:disabled {
+    input:disabled + label {
       opacity: 0.2;
+      cursor: default;
+    }
+
+    input[type='radio']:checked + label {
+      background: #ffffff;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+      border-radius: 5px;
     }
 
     div:first-child {
-      button {
+      label {
+        display: inline-block;
+        text-align: center;
         max-width: 131px;
         width: 100%;
         height: 32px;
         margin-top: 7px;
+        padding: 8px 0;
       }
     }
 
     div:last-child {
-      button {
+      label {
         padding: 8px 23px;
       }
     }
 
-    button {
+    label {
       cursor: pointer;
       font-weight: bold;
       font-size: 14px;
@@ -59,12 +74,6 @@
       background: rgba(255, 255, 255, 0.3);
       border-radius: 5px;
       margin-bottom: 7px;
-
-      &:active {
-        background: #ffffff;
-        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
-        border-radius: 5px;
-      }
     }
   }
 
