@@ -1,18 +1,17 @@
 import React from 'react';
-import './App.scss';
+import { Route } from 'react-router-dom';
 
-import BD from './assets/bd.json';
 //components
-import Header from './components/Header/Header';
-import Assortment from './components/Assortment/Assortment';
+import Header from './components/Header';
+import Home from './pages/Home';
+import Cart from './pages/Cart';
 
 function App() {
   return (
     <div className="wrapper">
-      <div className="container">
-        <Header />
-        <Assortment state={BD} />
-      </div>
+      <Header />
+      <Route exact path="/" component={Home} />
+      <Route path="/Cart" component={Cart} />
     </div>
   );
 }
