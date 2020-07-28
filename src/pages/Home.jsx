@@ -28,8 +28,6 @@ const Home = () => {
   const isLoaded = useSelector(({ pizzas }) => pizzas.isLoaded);
   const { category, sortBy } = useSelector(({ filters }) => filters);
 
-  console.log(cartItems);
-
   React.useEffect(() => {
     dispatch(fetchPizzas(sortBy, category));
   }, [category, sortBy]);
@@ -68,7 +66,9 @@ const Home = () => {
                 <SortItem
                   key={obj.id}
                   onClickAddPizza={handleAddPizzaToCart}
-                  addedCount={cartItems[obj.id] && cartItems[obj.id].length}
+                  addedCount={
+                    cartItems[obj.id] && cartItems[obj.id].items.length
+                  }
                   {...obj}
                 />
               ))
